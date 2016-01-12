@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Title</title>
+    <style>
+        /**分页样式***/
+        .rct-pagination-wrap .rct-pagination {
+            list-style-type: none;
+            display: inline-block;
+            vertical-align: middle;
+            padding: 0;
+            margin: 0 0 0 1px
+        }
+
+        .rct-pagination-wrap .rct-pagination li {
+            display: inline-block
+        }
+
+        .rct-pagination-wrap .rct-pagination li a {
+            cursor: pointer;
+            display: inline-block;
+            line-height: normal;
+            background-color: #fff;
+            padding: .5em .9em;
+            border: 1px solid #ddd;
+            margin-left: -1px
+        }
+
+        .rct-pagination-wrap .rct-pagination li:first-child a {
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px
+        }
+
+        .rct-pagination-wrap .rct-pagination li:last-child a {
+            border-right-width: 1px;
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px
+        }
+
+        .rct-pagination-wrap .rct-pagination .active a {
+            background-color: #0078e7;
+            color: #fff
+        }
+
+        .rct-pagination-wrap form {
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 10px
+        }
+
+        .rct-pagination-wrap form input {
+            width: 50px;
+            border-radius: 0;
+            margin: 0;
+            border-right-width: 0;
+            border-color: #ddd
+        }
+
+        .rct-pagination-wrap form :first-child {
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px
+        }
+
+        .rct-pagination-wrap form :last-child {
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+            border-right-width: 1px
+        }
+
+        .rct-pagination-wrap.rct-pagination-mini li:first-child a {
+            border-radius: 4px
+        }
+
+        .rct-pagination-wrap.rct-pagination-mini li:last-child a {
+            margin-left: 10px;
+            border-radius: 4px
+        }
+        /***表单**/
+        .rct-form input[readonly], .rct-form textarea[readonly] {
+            background-color: #eee;
+            color: #777;
+            border-color: #ccc
+        }
+
+        .rct-form input[disabled], .rct-form textarea[disabled] {
+            cursor: not-allowed;
+            background-color: #eaeded;
+            color: #cad2d3
+        }
+
+        .rct-form-aligned .rct-control-group {
+            position: relative;
+            padding-left: 11em;
+            margin-bottom: 1em;
+            box-sizing: border-box
+        }
+
+        .rct-form-aligned .rct-control-group label {
+            text-align: left;
+            display: block;
+            width: auto
+        }
+
+        .rct-form-aligned .rct-control-group .rct-checkbox-group, .rct-form-aligned .rct-control-group .rct-radio-group {
+            padding-top: .4em
+        }
+
+        .rct-form-aligned .rct-control-group .rct-checkbox-group.rct-inline label, .rct-form-aligned .rct-control-group .rct-radio-group.rct-inline label {
+            display: inline-block
+        }
+
+        .rct-form-aligned .rct-control-group .rct-rating {
+            margin-top: .4em
+        }
+
+        .rct-form-aligned .rct-control-group > .label {
+            position: absolute;
+            text-align: right;
+            width: 10em;
+            left: 0;
+            top: .5em
+        }
+
+        .rct-form-inline .rct-control-group {
+            display: inline-block;
+            margin-right: .6em
+        }
+
+        .rct-form-inline .rct-form-control {
+            vertical-align: middle
+        }
+        .rct-form-control{
+            position: relative;
+            padding: 9px;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-shadow: inset 0 1px 3px #e3e3e3;
+            border-radius: 4px;
+            line-height: normal;
+            box-sizing: border-box;
+            background-color: #fff;
+            vertical-align: middle;
+            outline: 0;
+        }
+
+        .rct-input-group input{border-radius:0;margin:0;border-right-width:0}.rct-input-group .addon{display:inline-block;vertical-align:middle;background-color:#eee;border:1px solid #ccc;line-height:normal;padding:.5em .8em;border-right-width:0;box-sizing:border-box}.rct-input-group :first-child{border-radius:4px 0 0 4px}.rct-input-group :last-child{border-radius:0 4px 4px 0;border-right-width:1px}@media only screen and (max-width:480px){.rct-input-group input{display:inline-block}}
+
+
+        /**table***/
+        .rct-table{overflow:hidden}.rct-table table{border-collapse:collapse;border-spacing:0;empty-cells:show}.rct-table table tr{border-top:1px solid #ddd}.rct-table table tr:first-child{border-top:0}.rct-table table td,.rct-table table th{box-sizing:border-box;padding:.5em 1em}.rct-table table th{text-align:left;border-width:0;position:relative}.rct-table table th .arrow-down,.rct-table table th .arrow-up{position:absolute;right:4px;width:0;height:0;border-style:solid}.rct-table table th .arrow-up{top:10px;border-width:0 4px 7px;border-color:transparent transparent #ddd}.rct-table table th .arrow-up.active{border-color:transparent transparent #555}.rct-table table th .arrow-down{top:19px;border-width:7px 4px 0;border-color:#ddd transparent transparent}.rct-table table th .arrow-down.active{border-color:#555 transparent transparent}.rct-table.rct-bordered td,.rct-table.rct-bordered th{border-left:1px solid #ddd}.rct-table.rct-bordered td:first-child,.rct-table.rct-bordered th:first-child{border-left:0}.rct-table.rct-bordered.rct-scrolled th:last-child{border-right:1px solid #ddd}.rct-table.rct-bordered .body-container,.rct-table.rct-bordered .header-container{border:1px solid #ddd}.rct-table.rct-striped tbody tr:nth-of-type(odd){background-color:#f9f9f9}.rct-table .rct-table-body{width:100%}.rct-table .header-container{border-bottom:2px solid #ddd}.rct-table .body-container{margin-bottom:10px}
+    </style>
+    <!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/es5-shim/4.4.1/es5-shim.js"></script>
+    <script src="//cdn.bootcss.com/es5-shim/4.4.1/es5-sham.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div id="table"></div>
+
+<script src="lib/react.js"></script>
+<script src="lib/react-dom.js"></script>
+<script src="demo2-pageBar-compiled.js"></script>
+<script src="demo2-compiled.js"></script>
+</body>
+</html>
